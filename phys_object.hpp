@@ -6,14 +6,32 @@
 #endif /* phys_object_hpp */
 namespace physObj{
 class Box{
-public:
     float mass;
     float velocity;
     float position;
-    void Create(int inputMass, float inputVelocity, float inputPosition){
+public:
+    Box(float inputMass, float inputVelocity, float inputPosition){
         mass = inputMass;
         velocity = inputVelocity;
         position = inputPosition;
+    }
+    void SetVelocity(float velocityIn){
+        velocity = velocityIn;
+    }
+    void SetPosition(float positionIn){
+        position = positionIn;
+    }
+    void Move(float move){
+        position += move;
+    }
+    float GetVelocity(){
+        return velocity;
+    }
+    float GetMass(){
+        return mass;
+    }
+    float GetPosition(){
+        return position;
     }
 };
 }
